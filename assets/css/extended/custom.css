@@ -170,14 +170,7 @@
     border-bottom: 2px solid rgba(0, 255, 0, 0.3);
 }
 
-.glitch-text {
-    font-size: 6rem !important;
-    font-weight: 900 !important;
-    text-transform: uppercase;
-    text-shadow: 0 0 20px rgba(0, 255, 0, 0.8), 0 0 40px rgba(0, 255, 0, 0.4);
-    margin: 0 0 20px 0;
-    letter-spacing: 5px;
-}
+
 
 .cyber-subtitle {
     font-size: 1.2rem;
@@ -248,3 +241,86 @@
 .log-meta { font-family: monospace; color: #00ff00; font-size: 0.85rem; margin-bottom: 8px; }
 .log-title { color: #fff !important; font-size: 1.4rem !important; margin: 0 0 10px 0 !important; }
 .log-readmore { font-family: monospace; color: #8ab4f8; font-size: 0.9rem; }
+
+/* ========================================= */
+/* 賽博朋克字節跳動標題 Core Style */
+/* ========================================= */
+
+.glitch-text-staggered {
+    font-size: 6rem !important;
+    font-weight: 900 !important;
+    color: #fff !important;
+    letter-spacing: 5px;
+    margin: 0 0 20px 0;
+    text-align: center;
+    cursor: default;
+}
+
+/* 每個字母的基礎設定：準備好跳動 */
+.jump-letter {
+    display: inline-block; /* 核心：允許應用動畫 */
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important; /* 絲滑回彈效果 */
+}
+
+/* 鼠標懸停在某個字母上時，該字母向上跳動並閃爍綠光 */
+.jump-letter:hover {
+    transform: translateY(-20px) scale(1.1) !important; /* 向上移動20px並微微放大 */
+    color: #00ff00 !important; /* 變為霓虹綠 */
+    text-shadow: 
+        0 0 10px rgba(0, 255, 0, 0.8),
+        0 0 20px rgba(0, 255, 0, 0.6),
+        0 0 30px rgba(0, 255, 0, 0.4) !important; /* 強烈綠色霓虹陰影 */
+}
+
+/* ========================================= */
+/* 高級便當盒 核心樣式 Core Style */
+/* ========================================= */
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 兩列網格 */
+    gap: 25px; /* 盒子之間的間距 */
+    margin-top: 50px;
+    text-align: left;
+}
+
+/* 盒子基本樣式 (毛玻璃感 + 霓虹邊框 + 互動特效) */
+.bento-card {
+    background: rgba(20, 20, 20, 0.6) !important; /* 深色半透明底色，透出背後庫里 */
+    backdrop-filter: blur(12px) !important; /* 核心魔法：毛玻璃模糊 */
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important; /* 極細的白色高光邊框 */
+    border-radius: 20px !important; /* 圓潤圓角 */
+    padding: 30px !important;
+    text-decoration: none !important; /* 刪除連結下劃線 */
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important; /* 絲滑動畫過渡 */
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.3) !important; /* 基礎懸浮陰影 */
+}
+
+/* 互動特效：鼠標放上去時卡片會上浮並亮起霓虹陰影 */
+.bento-card:hover {
+    transform: translateY(-8px) !important; /* 向上浮動 */
+    box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.6) !important; /* 陰影加深，立體感更強 */
+    background: rgba(255, 255, 255, 0.05) !important; /* 微微變亮 */
+}
+
+/* 為不同卡片添加不同的左側霓虹亮邊 */
+.bento-glow-green { border-left: 4px solid #00ff00 !important; }
+.bento-glow-yellow { border-left: 4px solid #fdb927 !important; } /* 勇士隊金黃色 */
+.bento-glow-blue { border-left: 4px solid #8ab4f8 !important; }
+.bento-glow-sc30 { border-left: 4px solid #fff !important; }
+
+/* 盒子裡面元素的微調 */
+.bento-icon { font-size: 2.5rem; margin-bottom: 15px; }
+.bento-card h3 { color: #fff !important; font-size: 1.5rem !important; margin: 0 0 10px 0 !important; font-weight: bold; }
+.bento-card p { color: #a0a0a0 !important; font-size: 0.95rem !important; margin: 0 !important; line-height: 1.7 !important; }
+
+/* 卡片亮邊在懸停時變得更亮 */
+.bento-card:hover {
+    border-color: rgba(255, 255, 255, 0.3) !important;
+}
+.bento-glow-green:hover { border-left-color: #00ff00 !important; }
+.bento-glow-yellow:hover { border-left-color: #fdb927 !important; }
+.bento-glow-blue:hover { border-left-color: #8ab4f8 !important; }
