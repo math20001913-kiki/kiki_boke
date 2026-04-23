@@ -164,7 +164,7 @@
 /* --- 第一屏：库里 Hero 区 --- */
 .hero-screen {
     /* 删掉之前的 url 图片，只保留一个半透明的黑色遮罩层，让视频透过来，同时保证文字清晰 */
-    background: rgba(10, 10, 15, 0.6) !important; 
+    background: rgba(10, 10, 15, 0.1) !important; 
     text-align: center;
     position: relative;
     border-bottom: 2px solid rgba(0, 255, 0, 0.3);
@@ -182,7 +182,7 @@
     transform: translate(-50%, -50%);
     z-index: -1; /* 放到最底层，在黑色遮罩的下面 */
     object-fit: cover; /* 保证视频画面不变形铺满 */
-    opacity: 0.8; /* 微微降低视频亮度 */
+    opacity: 1; /* 微微降低视频亮度 */
 }
 
 
