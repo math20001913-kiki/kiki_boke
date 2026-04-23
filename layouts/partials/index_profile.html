@@ -1,0 +1,34 @@
+<div class="profile">
+    <div class="profile_inner">
+        <h1>{{ .Site.Params.profileMode.title | default .Site.Title }}</h1>
+        <span class="subtitle">{{ .Site.Params.profileMode.subtitle }}</span>
+
+        <div class="bento-grid">
+            
+            <a href="/posts" class="bento-card">
+                <div class="bento-icon">💻</div>
+                <h3>学习笔记</h3>
+                <p>硬核技术探索，持续更新我的计算机网络与编程笔记。</p>
+            </a>
+
+            <a href="/categories" class="bento-card">
+                <div class="bento-icon">🔬</div>
+                <h3>学术项目</h3>
+                <p>数学建模与 VHDL 课设，聚焦问题建模与工程实现。</p>
+            </a>
+
+            <a href="/tags" class="bento-card">
+                <div class="bento-icon">☕</div>
+                <h3>散文随笔</h3>
+                <p>记录生活观察，保留更慢、更深的思考。</p>
+            </a>
+
+            <a href="/search" class="bento-card">
+                <div class="bento-icon">🔍</div>
+                <h3>全站搜索</h3>
+                <p>快速定位知识点，即开即用。</p>
+            </a>
+
+        </div>
+    </div>
+</div>

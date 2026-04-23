@@ -61,19 +61,27 @@ body::before {
 /* 视觉升级 3.0：赛博朋克发光标题与科技感胶囊 */
 /* ========================================= */
 
-/* 1. 让主标题变成绿色发光体 (对应 Z2X BLOG) */
+/* 1. 修改主标题，加上 animation 属性 */
 .profile_inner h1 {
-    font-size: 4rem !important; /* 字放大 */
+    font-size: 4rem !important;
     font-weight: 800 !important;
-    color: #ffffff !important; /* 字体本身白色 */
-    /* 核心魔法：利用多层文字阴影叠加出霓虹发光效果 */
-    text-shadow: 
-        0 0 10px rgba(0, 255, 0, 0.8),
-        0 0 20px rgba(0, 255, 0, 0.6),
-        0 0 40px rgba(0, 255, 0, 0.4),
-        0 0 80px rgba(0, 255, 0, 0.2) !important;
-    letter-spacing: 2px; /* 字母间距拉开一点更高级 */
+    color: #ffffff !important;
+    letter-spacing: 2px;
     margin-bottom: 20px;
+    /* 装上马达：调用 neonPulse 动画，持续2秒，无限循环，平滑往返 */
+    animation: neonPulse 2s infinite alternate !important; 
+}
+
+/* 2. 在下面新增这段代码：定义霓虹呼吸的节奏 */
+@keyframes neonPulse {
+    0% {
+        text-shadow: 0 0 5px rgba(0, 255, 0, 0.5), 0 0 10px rgba(0, 255, 0, 0.4);
+        transform: scale(1); /* 原始大小 */
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(0, 255, 0, 1), 0 0 20px rgba(0, 255, 0, 0.8), 0 0 40px rgba(0, 255, 0, 0.6), 0 0 80px rgba(0, 255, 0, 0.4);
+        transform: scale(1.02); /* 微微放大，产生跳动/呼吸感 */
+    }
 }
 
 /* 2. 把副标题做成顶部的“胶囊按钮” (对应 Welcome to...) */
@@ -94,4 +102,46 @@ body::before {
 .profile_inner {
     padding-top: 10vh;
     text-align: center;
+}
+/* ========================================= */
+/* 便当盒网格布局样式 (Bento Grid) */
+/* ========================================= */
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 划分为两列 */
+    gap: 20px; /* 卡片之间的间距 */
+    margin-top: 50px;
+    text-align: left; /* 文字靠左对齐，显得专业 */
+}
+
+/* 每一个小盒子的质感 */
+.bento-card {
+    background: rgba(20, 20, 20, 0.6) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 20px !important;
+    padding: 24px !important;
+    text-decoration: none !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important; /* 极致丝滑的动画过渡 */
+    display: flex;
+    flex-direction: column;
+}
+
+/* 鼠标悬浮时的赛博朋克互动反馈 */
+.bento-card:hover {
+    transform: translateY(-8px) !important; /* 往上浮 */
+    border-color: rgba(0, 255, 0, 0.6) !important; /* 边框亮绿光，呼应标题 */
+    box-shadow: 0 10px 30px rgba(0, 255, 0, 0.15) !important; /* 投射绿色发光阴影 */
+}
+
+/* 盒子里面元素的微调 */
+.bento-icon { font-size: 2rem; margin-bottom: 12px; }
+.bento-card h3 { color: #fff !important; font-size: 1.4rem !important; margin: 0 0 8px 0 !important; font-weight: bold; }
+.bento-card p { color: #a0a0a0 !important; font-size: 0.95rem !important; margin: 0 !important; line-height: 1.6 !important; }
+
+/* 手机端的响应式适配：屏幕变小时自动变成单列 */
+@media (max-width: 768px) {
+    .bento-grid { grid-template-columns: 1fr; }
 }
