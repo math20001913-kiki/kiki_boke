@@ -1,0 +1,18 @@
+    :root {
+    --main-width: 1400px; /* 默认是 1200px */
+}
+body.home.list {
+    background-image: url('/images/1.jpg'); /* 图片需放在 static/images/ */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+/* 添加遮罩层以保证文字可读性 */
+body.home.list::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明黑色 */
+    z-index: -1;
+
+}
