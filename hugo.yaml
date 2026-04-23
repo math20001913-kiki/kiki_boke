@@ -5,10 +5,16 @@ theme: 'mytheme'
 
 # 主题参数，用于控制功能
 params:
+# 开启个人主页模式
+  profileMode:
+    enabled: true
+    title: "KIKI BLOG"
+    subtitle: "WELCOME TO THE FUTURE OF BLOGGING"
   ShowShareButtons: true
   ShowReadingTime: true
   ShowPostNavLinks: true
   ShowCodeCopyButtons: true
+
   
   # 开启目录功能的全局开关
   ShowToc: true

@@ -25,31 +25,73 @@ body::before {
     border-radius: 12px !important;
     padding: 20px !important;
 }
-/* ---------------------------------- */
-/* 高级定制：毛玻璃（磨砂玻璃）特效面板 */
-/* ---------------------------------- */
+/* ========================================= */
+/* 视觉升级 2.0：全透明骨架 + 精致悬浮毛玻璃卡片 */
+/* ========================================= */
 
-/* 让正文主体、顶部导航栏变成半透明的毛玻璃 */
-.main, .header {
-    background: rgba(255, 255, 255, 0.15) !important; /* 白色半透明底色 */
-    backdrop-filter: blur(12px) !important; /* 核心魔法：背景模糊（磨砂感） */
-    -webkit-backdrop-filter: blur(12px) !important; /* 兼容苹果浏览器 */
-    border: 1px solid rgba(255, 255, 255, 0.3) !important; /* 加上一层极细的高光边框 */
-    border-radius: 16px !important; /* 圆角变得更圆润平滑 */
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2) !important; /* 增加立体悬浮阴影 */
-    margin-top: 20px;
+/* 1. 让顶部导航栏和正文大背景彻底透明，完全融入库里背景 */
+.header, .main {
+    background: transparent !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: none !important;
 }
 
-/* 如果你的博客开启了黑夜模式（Dark Mode），自动切换为深色毛玻璃 */
-.dark .main, .dark .header {
-    background: rgba(0, 0, 0, 0.4) !important; /* 黑色半透明底色 */
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5) !important;
-}
-
-/* 让导航栏往下掉一点，不要紧贴着屏幕顶部 */
-.header {
-    margin: 10px auto !important;
-    max-width: var(--main-width) !important;
+/* 2. 只给“文章卡片”加上精致的暗色毛玻璃特效 */
+.post-entry {
+    background: rgba(20, 20, 20, 0.6) !important; /* 更通透的深色底，避免突兀 */
+    backdrop-filter: blur(10px) !important; /* 适度模糊，保留背景的轮廓 */
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important; /* 极细的高光边缘 */
     border-radius: 16px !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3) !important;
+    margin-bottom: 20px !important; 
+    padding: 24px !important; /* 让卡片内部文字不那么拥挤 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important; /* 准备添加动画 */
+}
+
+/* 3. 互动特效：鼠标放上去时，卡片会上浮并加深阴影 */
+.post-entry:hover {
+    transform: translateY(-6px) !important; /* 向上浮动 */
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.6) !important; /* 阴影加深，立体感更强 */
+    border: 1px solid rgba(255, 255, 255, 0.3) !important; /* 边框微微变亮 */
+}
+/* ========================================= */
+/* 视觉升级 3.0：赛博朋克发光标题与科技感胶囊 */
+/* ========================================= */
+
+/* 1. 让主标题变成绿色发光体 (对应 Z2X BLOG) */
+.profile_inner h1 {
+    font-size: 4rem !important; /* 字放大 */
+    font-weight: 800 !important;
+    color: #ffffff !important; /* 字体本身白色 */
+    /* 核心魔法：利用多层文字阴影叠加出霓虹发光效果 */
+    text-shadow: 
+        0 0 10px rgba(0, 255, 0, 0.8),
+        0 0 20px rgba(0, 255, 0, 0.6),
+        0 0 40px rgba(0, 255, 0, 0.4),
+        0 0 80px rgba(0, 255, 0, 0.2) !important;
+    letter-spacing: 2px; /* 字母间距拉开一点更高级 */
+    margin-bottom: 20px;
+}
+
+/* 2. 把副标题做成顶部的“胶囊按钮” (对应 Welcome to...) */
+.profile_inner .subtitle {
+    display: inline-block;
+    font-size: 0.9rem !important;
+    color: #8ab4f8 !important; /* 浅蓝色字 */
+    border: 1px solid rgba(138, 180, 248, 0.3) !important; /* 细细的边框 */
+    border-radius: 999px !important; /* 999px 就会变成完美的胶囊形状 */
+    padding: 8px 24px !important;
+    letter-spacing: 4px; /* 拉大间距，更有极客感 */
+    text-transform: uppercase; /* 强制全部大写 */
+    background: rgba(138, 180, 248, 0.05); /* 极淡的背景色 */
+    margin-bottom: 30px;
+}
+
+/* 微调整个档案模块的布局，把它往下拉一点居中 */
+.profile_inner {
+    padding-top: 10vh;
+    text-align: center;
 }
