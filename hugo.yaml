@@ -7,7 +7,7 @@ theme: 'mytheme'
 params:
 # 开启个人主页模式
   profileMode:
-    enabled: true
+    enabled: false
     title: "KIKI BLOG"
     subtitle: "WELCOME TO THE FUTURE OF BLOGGING"
   ShowShareButtons: true

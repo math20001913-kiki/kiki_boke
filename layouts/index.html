@@ -1,0 +1,63 @@
+{{ define "main" }}
+<div class="cyber-home-container">
+    
+    <section class="cyber-section hero-screen">
+        <div class="hero-content">
+            <h1 class="glitch-text" data-text="KIKI BLOG">KIKI BLOG</h1>
+            <div class="cyber-subtitle">
+                <span class="sc30-tag">SC30</span> // ENGINEER_MODE: ON //
+            </div>
+            <p class="hero-desc">探索计算机网络边界，重构 VHDL 工程逻辑。</p>
+        </div>
+        <div class="scroll-down-indicator">
+            <span class="blink-arrow">⬇</span> SYSTEM READY_ SCROLL TO EXPLORE
+        </div>
+    </section>
+
+    <section class="cyber-section bento-screen">
+        <div class="section-header">
+            <h2 class="neon-title">>> CORE_MODULES</h2>
+            <div class="tech-line"></div>
+        </div>
+        <div class="bento-grid">
+            <a href="/posts" class="bento-card">
+                <div class="bento-icon">🌐</div>
+                <h3>网络协议栈</h3>
+                <p>深入以太网信道利用率与 OSI 架构分析。</p>
+            </a>
+            <a href="/categories" class="bento-card">
+                <div class="bento-icon">⚙️</div>
+                <h3>工程与算法</h3>
+                <p>从 VHDL 课设到数学建模的最优解。</p>
+            </a>
+            <a href="/tags" class="bento-card">
+                <div class="bento-icon">💻</div>
+                <h3>极客终端</h3>
+                <p>PowerShell 自动化与版本控制实战。</p>
+            </a>
+            <a href="/search" class="bento-card">
+                <div class="bento-icon">🔍</div>
+                <h3>全息搜索</h3>
+                <p>全局检索知识库数据。</p>
+            </a>
+        </div>
+    </section>
+
+    <section class="cyber-section logs-screen">
+        <div class="section-header">
+            <h2 class="neon-title">>> LATEST_LOGS</h2>
+            <div class="tech-line"></div>
+        </div>
+        <div class="logs-grid">
+            {{ range first 3 (where .Site.RegularPages "Type" "in" site.Params.mainSections) }}
+            <a href="{{ .Permalink }}" class="log-card">
+                <div class="log-meta">{{ .Date.Format "2006.01.02" }} // STATUS: SYNCED</div>
+                <h3 class="log-title">{{ .Title }}</h3>
+                <div class="log-readmore">READ_DATA >></div>
+            </a>
+            {{ end }}
+        </div>
+    </section>
+
+</div>
+{{ end }}
