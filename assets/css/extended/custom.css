@@ -1,18 +1,27 @@
     :root {
     --main-width: 1400px; /* 默认是 1200px */
 }
-body.home.list {
-    background-image: url('/images/1.jpg'); /* 图片需放在 static/images/ */
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+/* 强制所有页面加载背景图，不许主题反抗 */
+body {
+    background-image: url('/images/1.jpg') !important; 
+    background-size: cover !important;
+    background-position: center top !important;
+    background-attachment: fixed !important;
 }
-/* 添加遮罩层以保证文字可读性 */
-body.home.list::before {
-    content: '';
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* 半透明黑色 */
-    z-index: -1;
 
+/* 强制增加半透明黑纱遮罩，保证字看得清 */
+body::before {
+    content: '' !important;
+    position: fixed !important;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6) !important;
+    z-index: -1 !important;
+    pointer-events: none !important;
+}
+
+/* 让正文区域稍微透明一点，透出后面的库里 */
+.main {
+    background-color: rgba(30, 30, 30, 0.7) !important;
+    border-radius: 12px !important;
+    padding: 20px !important;
 }
