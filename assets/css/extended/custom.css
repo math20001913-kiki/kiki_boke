@@ -2,16 +2,16 @@
     --main-width: 1400px; /* 默认是 1200px */
 }
 /* 强制所有页面加载背景图，不许主题反抗 */
-/* 让背景图只在“档案模式首页”生效 */
-body.profile {
-    background-image: url('/images/1.jpg') !important; /* 确保文件名是你库里的图 */
+/* 认准 PaperMod 主题的官方首页代号：.list */
+body.list {
+    background-image: url('/images/1.jpg') !important; /* 如果你改名了，记得换成 curry_bg.jpg */
     background-size: cover !important;
     background-position: center top !important;
     background-attachment: fixed !important;
 }
 
-/* 遮罩层也只在首页开启 */
-body.profile::before {
+/* 遮罩层同样绑定 .list */
+body.list::before {
     content: '' !important;
     position: fixed !important;
     top: 0; left: 0; width: 100%; height: 100%;
