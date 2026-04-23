@@ -2,31 +2,23 @@
     --main-width: 1400px; /* 默认是 1200px */
 }
 /* 强制所有页面加载背景图，不许主题反抗 */
-/* 注意：这里的选择器从 body 变成了 body.home */
-/* 这样背景图就只会作用于“首页” */
-body.home {
-    background-image: url('/images/1.jpg') !important; /* 确保文件名正确 */
+/* 让背景图只在“档案模式首页”生效 */
+body.profile {
+    background-image: url('/images/1.jpg') !important; /* 确保文件名是你库里的图 */
     background-size: cover !important;
     background-position: center top !important;
     background-attachment: fixed !important;
 }
 
-/* 遮罩层也只在首页开启，保证文章页是纯净的 */
-body.home::before {
+/* 遮罩层也只在首页开启 */
+body.profile::before {
     content: '' !important;
     position: fixed !important;
     top: 0; left: 0; width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.4) !important; /* 可以根据喜好调深浅 */
+    background-color: rgba(0, 0, 0, 0.4) !important;
     z-index: -1 !important;
     pointer-events: none !important;
 }
-
-/* 如果你之前给 .main 加了毛玻璃，也可以让它只在首页生效，或者干脆删掉 */
-body.home .main {
-    background: transparent !important;
-    box-shadow: none !important;
-}
-
 /* 让正文区域稍微透明一点，透出后面的库里 */
 .main {
     background-color: rgba(30, 30, 30, 0.7) !important;
