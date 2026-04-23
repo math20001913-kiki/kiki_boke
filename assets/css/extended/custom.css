@@ -145,3 +145,15 @@ body::before {
 @media (max-width: 768px) {
     .bento-grid { grid-template-columns: 1fr; }
 }
+/* 字节跳动风格的故障抖动动画 */
+@keyframes glitch {
+  0% { transform: translate(0); text-shadow: -2px 0 red, 2px 0 blue; }
+  25% { transform: translate(-2px, 2px); text-shadow: 2px 0 red, -2px 0 blue; }
+  50% { transform: translate(2px, -2px); text-shadow: -2px 0 red, 2px 0 blue; }
+  75% { transform: translate(-2px, -2px); text-shadow: 2px 0 red, -2px 0 blue; }
+  100% { transform: translate(0); }
+}
+
+.profile_inner h1:hover {
+    animation: glitch 0.3s cubic-bezier(.25,.46,.45,.94) both infinite !important;
+}
