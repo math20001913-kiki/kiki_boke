@@ -1,6 +1,6 @@
 ---
 title: "我是如何搭建个人博客的"
-date: 2026-04-23T20:00:00+08:00
+date: 2026-04-23T18:00:00+08:00
 draft: false
 tags: ["博客搭建", "Hugo", "Vercel", "前端折腾"]
 categories: ["建站记录"]
