@@ -1,7 +1,7 @@
 baseURL: 'https://kiki-boke.vercel.app/' # 最终换成你的域名
 languageCode: 'zh-cn'
 title: 'kiki的个人博客'
-theme: 'papermod'
+theme: 'mytheme'
 
 # 主题参数，用于控制功能
 params:
