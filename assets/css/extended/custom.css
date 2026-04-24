@@ -352,3 +352,50 @@
 .bento-glow-green:hover { border-left-color: #00ff00 !important; }
 .bento-glow-yellow:hover { border-left-color: #fdb927 !important; }
 .bento-glow-blue:hover { border-left-color: #8ab4f8 !important; }
+
+/* ========================================= */
+/* 终极防屏蔽版：硬核绑定背景图 */
+/* ========================================= */
+
+.bento-card {
+    position: relative;
+    overflow: hidden;
+    background-color: #0f0f14 !important; /* 底色 */
+    background-size: cover !important;
+    background-position: right center !important;
+    background-repeat: no-repeat !important;
+    
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 20px !important;
+    padding: 30px !important;
+    text-decoration: none !important;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.3) !important;
+}
+
+/* --- 直接给每个卡片硬塞背景图和渐变 --- */
+
+/* 卡片1 */
+.pic-1 { background-image: linear-gradient(90deg, rgba(15,15,20,0.98) 40%, rgba(15,15,20,0.1) 100%), url('/images/bento1.jpg') !important; }
+.pic-1:hover { background-image: linear-gradient(90deg, rgba(15,15,20,0.85) 30%, rgba(15,15,20,0.05) 100%), url('/images/bento1.jpg') !important; }
+
+/* 卡片2 */
+.pic-2 { background-image: linear-gradient(90deg, rgba(15,15,20,0.98) 40%, rgba(15,15,20,0.1) 100%), url('/images/bento2.jpg') !important; }
+.pic-2:hover { background-image: linear-gradient(90deg, rgba(15,15,20,0.85) 30%, rgba(15,15,20,0.05) 100%), url('/images/bento2.jpg') !important; }
+
+/* 卡片3 */
+.pic-3 { background-image: linear-gradient(90deg, rgba(15,15,20,0.98) 40%, rgba(15,15,20,0.1) 100%), url('/images/bento3.jpg') !important; }
+.pic-3:hover { background-image: linear-gradient(90deg, rgba(15,15,20,0.85) 30%, rgba(15,15,20,0.05) 100%), url('/images/bento3.jpg') !important; }
+
+/* 卡片4 */
+.pic-4 { background-image: linear-gradient(90deg, rgba(15,15,20,0.98) 40%, rgba(15,15,20,0.1) 100%), url('/images/bento4.jpg') !important; }
+.pic-4:hover { background-image: linear-gradient(90deg, rgba(15,15,20,0.85) 30%, rgba(15,15,20,0.05) 100%), url('/images/bento4.jpg') !important; }
+
+/* 鼠标悬停时的基础效果：上浮、阴影、边框变亮 */
+.bento-card:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.6) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+}
