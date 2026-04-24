@@ -98,25 +98,46 @@
     text-align: left; /* 文字靠左对齐，显得专业 */
 }
 
-/* 每一个小盒子的质感 */
+/* ========================================= */
+/* Z2X 风格：图文渐变高级便当盒 */
+/* ========================================= */
+
 .bento-card {
-    background: rgba(20, 20, 20, 0.6) !important;
-    backdrop-filter: blur(12px) !important;
-    -webkit-backdrop-filter: blur(12px) !important;
+    position: relative; /* 为遮罩层做准备 */
+    z-index: 1;
+    overflow: hidden; /* 防止图片溢出圆角 */
+    background-size: cover !important;
+    background-position: right center !important; /* 图片靠右对齐 */
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
     border-radius: 20px !important;
-    padding: 24px !important;
+    padding: 30px !important;
     text-decoration: none !important;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important; /* 极致丝滑的动画过渡 */
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.3) !important;
 }
 
-/* 鼠标悬浮时的赛博朋克互动反馈 */
+/* 核心魔法：利用伪元素画出一层【左黑右透】的渐变遮罩 */
+.bento-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    /* 渐变：左侧90%纯黑保证文字清晰，右侧变透明透出图片 */
+    background: linear-gradient(90deg, rgba(15,15,20,0.95) 40%, rgba(15,15,20,0.2) 100%);
+    z-index: -1; /* 放到文字下面，图片上面 */
+    transition: all 0.4s ease;
+}
+
+/* 鼠标悬停时：整体上浮，且遮罩微微变亮，露出更多图片 */
 .bento-card:hover {
-    transform: translateY(-8px) !important; /* 往上浮 */
-    border-color: rgba(0, 255, 0, 0.6) !important; /* 边框亮绿光，呼应标题 */
-    box-shadow: 0 10px 30px rgba(0, 255, 0, 0.15) !important; /* 投射绿色发光阴影 */
+    transform: translateY(-8px) !important;
+    box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.6) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.bento-card:hover::before {
+    background: linear-gradient(90deg, rgba(15,15,20,0.85) 30%, rgba(15,15,20,0.1) 100%);
 }
 
 /* 盒子里面元素的微调 */
