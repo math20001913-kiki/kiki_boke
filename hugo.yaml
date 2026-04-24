@@ -5,6 +5,7 @@ theme: 'mytheme'
 
 # 主题参数，用于控制功能
 params:
+  comments: true  # 加上这行，开启全局评论总闸
 # 开启个人主页模式
   profileMode:
     enabled: false
