@@ -1,15 +1,30 @@
-<script src="https://giscus.app/client.js"
-        data-repo="math20001913-kiki/kiki_boke"
-        data-repo-id="R_kgDOSKNqZA"
-        data-category="[在此输入分类名]"
-        data-category-id="[在此输入分类 ID]"
-        data-mapping="url"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="dark"
-        data-lang="zh-CN"
-        crossorigin="anonymous"
-        async>
+<div id="tcomment"></div>
+<script src="https://cdn.jsdelivr.net/npm/twikoo@1.6.36/dist/twikoo.all.min.js"></script>
+<script>
+twikoo.init({
+  envId: 'https://你的Twikoo后端地址.vercel.app', // ⚠️ 这里换成你在第二阶段最后复制的 API 地址！
+  el: '#tcomment', 
+  // region: 'ap-guangzhou', // 如果你用腾讯云才需要，Vercel 部署不需要这行
+  // path: location.pathname, 
+  lang: 'zh-CN', 
+})
 </script>
+
+<style>
+/* 针对你博客暗黑风格的 Twikoo 微调补丁 */
+.twikoo {
+    color: #fff;
+    background: rgba(20, 20, 20, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    margin-top: 40px;
+}
+.tk-input, .tk-textarea {
+    background: rgba(255, 255, 255, 0.05) !important;
+    color: #fff !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+.tk-action-icon { color: #8ab4f8 !important; }
+</style>
