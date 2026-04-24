@@ -108,13 +108,16 @@
     /* 核心魔法：第一层是左黑右透的渐变，第二层是读取 HTML 里的图片变量 */
     background-image: linear-gradient(90deg, rgba(15,15,20,0.98) 40%, rgba(15,15,20,0.1) 100%), var(--bg-image) !important;
     background-size: cover !important;
-    background-position: right center !important;
+    background-position: center !important;
     background-repeat: no-repeat !important;
     background-color: #0f0f14 !important; /* 兜底底色 */
     
+    /* 1. 设置最小高度，数值越大，框就越高，图片露出来越多 */
+    min-height: 280px !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
     border-radius: 20px !important;
-    padding: 30px !important;
+    padding: 40px30px !important;
+    justify-content: flex-end !important;
     text-decoration: none !important;
     transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
     display: flex;
