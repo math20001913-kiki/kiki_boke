@@ -20,9 +20,9 @@ toc: true
 > 💡 **博主注：** 下面是我针对本章核心考点整理的完整版 PDF 笔记（包含 IP 地址划分推导、路由协议拓扑计算等）。你可以直接在网页内滚动阅读，也可以放大查看细节。
 
 <div style="width: 100%; border: 1px solid #eee; border-radius: 8px; overflow: hidden; margin: 20px 0;">
-    <iframe src="/notes/计算机网络第四章总结.pdf" width="100%" height="800px" style="border: none;">
-        <p>你的浏览器不支持 PDF 内嵌查看，请<a href="/notes/计算机网络第四章总结.pdf">点击此处下载</a>笔记。</p>
-    </iframe>
+   <iframe src="/pdfs/计算机网络第四章总结.pdf" width="100%" height="800px" style="border: none;">
+    <p>你的浏览器不支持 PDF 内嵌查看，请<a href="/pdfs/计算机网络第四章总结.pdf">点击此处下载</a>笔记。</p>
+   </iframe>
 </div>
 
 ---
