@@ -38,8 +38,8 @@ markup:
 menu:
   main:
     - name: Study Notes # 菜单显示名
-      url: "/notes/"   # 链接到 content/notes/ 文件夹
-      weight: 10       # 排序权重，数字越小越靠前
+      url: "/posts/"   # 链接到所有的文章列表
+      weight: 10
     - name: Musings
       url: "/musings/"
       weight: 20
